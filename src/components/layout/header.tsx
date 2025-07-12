@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -11,6 +11,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "Highlights", href: "#stats" },
@@ -26,9 +27,12 @@ export default function Header() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      // Transition point can be adjusted, e.g., 50px from the top
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
+    // Set initial state
+    handleScroll();
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -40,18 +44,22 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+      className={cn(
+        "fixed top-0 z-50 w-full transition-all duration-300",
         isScrolled
           ? "bg-background/80 shadow-md backdrop-blur-sm"
           : "bg-transparent"
-      }`}
+      )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <a href="#" className="flex items-center space-x-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 256 256"
-            className="size-8"
+            className={cn(
+              "size-8 transition-colors duration-300",
+              isScrolled ? "" : "[&>path]:fill-white"
+            )}
           >
             <defs>
               <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -60,12 +68,17 @@ export default function Header() {
               </linearGradient>
             </defs>
             <path
-              fill="url(#logo-gradient)"
+              className={isScrolled ? "fill-[url(#logo-gradient)]" : "fill-white"}
               d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88Zm-44-36a8 8 0 0 1-8-8V80a8 8 0 0 1 16 0v92a8 8 0 0 1-8 8Zm40-32a8 8 0 0 1-8-8V96a8 8 0 0 1 16 0v60a8 8 0 0 1-8 8Zm40 24a8 8 0 0 1-8-8V88a8 8 0 0 1 16 0v84a8 8 0 0 1-8 8Z"
             ></path>
           </svg>
 
-          <span className="font-headline text-2xl font-bold text-foreground">
+          <span
+            className={cn(
+              "font-headline text-2xl font-bold transition-colors duration-300",
+              isScrolled ? "text-foreground" : "text-white"
+            )}
+          >
             GrindSite
           </span>
         </a>
@@ -74,7 +87,12 @@ export default function Header() {
             <a
               key={link.name}
               href={link.href}
-              className="font-medium text-foreground transition-colors hover:text-primary"
+              className={cn(
+                "font-medium transition-colors duration-300",
+                isScrolled
+                  ? "text-foreground hover:text-primary"
+                  : "text-white hover:text-white/80"
+              )}
             >
               {link.name}
             </a>
@@ -87,7 +105,11 @@ export default function Header() {
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button
+                variant="ghost"
+                size="icon"
+                className={cn(isScrolled ? "text-foreground" : "text-white hover:bg-white/10 hover:text-white")}
+              >
                 <Menu className="size-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
