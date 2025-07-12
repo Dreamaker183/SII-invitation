@@ -52,7 +52,7 @@ export default function Speakers() {
             Inspiration from the leaders who have been there and done that.
           </p>
         </div>
-      <div className="relative mt-12 w-full overflow-x-auto [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+      <div className="relative mt-12 w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
         <div className="flex w-max animate-scroll-left-slow">
           {allTestimonials.map((item, index) => (
             <div key={index} className="flex-shrink-0 px-3" style={{ width: "auto" }}>
