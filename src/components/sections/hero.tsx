@@ -6,19 +6,22 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-background py-24 pt-36 sm:py-32 flex items-center justify-center text-center"
+      className="relative overflow-hidden py-24 pt-36 sm:py-32 flex items-center justify-center text-center"
     >
-      <div className="absolute inset-0 z-[-1]">
+      <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1541417904950-b855846fe074?q=80&w=2041&auto=format&fit=crop"
+          src="/natalya-letunova-lZXyGjsRnP0-unsplash.jpg"
           alt="Hong Kong skyline at night"
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/60" />
       </div>
 
-      <div className="container mx-auto px-4 text-center text-white">
+      <div className="absolute inset-0 z-10 pointer-events-none" aria-hidden="true">
+        <div className="w-full h-full bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+      </div>
+
+      <div className="container mx-auto px-4 text-center text-white relative z-10">
         <h1 className="font-headline text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
           Startup Grind Conference 2025
         </h1>
