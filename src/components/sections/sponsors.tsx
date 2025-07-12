@@ -1,85 +1,101 @@
 import Image from "next/image";
-import { PlayCircle } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
-const sponsorMedia = [
+const sponsorPackages = [
   {
-    name: "Innovate Inc.",
-    type: "image",
-    src: "https://placehold.co/600x400",
-    alt: "Sponsor A logo and product showcase",
-    hint: "corporate branding",
+    name: "Scaleup Exhibition Package",
+    description: "For Seed to Series A startups seeking their next round of funding.",
+    price: "$4999",
+    image: "https://placehold.co/600x400",
+    hint: "conference speaker stage"
   },
   {
-    name: "Tech GIANTS",
-    type: "video",
-    src: "https://placehold.co/600x400",
-    alt: "Promotional video from Sponsor B",
-    hint: "technology conference",
+    name: "Startup Exhibition Package",
+    description: "For Bootstrapped to Seed startups looking to accelerate growth.",
+    price: "$2499",
+    image: "https://placehold.co/600x400",
+    hint: "startup pitch event"
   },
   {
-    name: "Synergy Systems",
-    type: "image",
-    src: "https://placehold.co/600x400",
-    alt: "Sponsor C team at a previous event",
-    hint: "team collaboration",
-  },
-  {
-    name: "NextGen Solutions",
-    type: "video",
-    src: "https://placehold.co/600x400",
-    alt: "Sponsor D product demonstration",
-    hint: "product demo",
+    name: "Unicorn Exhibition Package",
+    description: "Premium placement for established industry leaders.",
+    price: "$9999",
+    image: "https://placehold.co/600x400",
+    hint: "corporate event"
   },
 ];
 
 export default function Sponsors() {
   return (
     <section id="sponsors" className="relative overflow-hidden py-16 sm:py-24">
-       <div
-        className="absolute inset-x-0 bottom-0 top-0 -z-10 bg-muted/50"
+      <div
+        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         aria-hidden="true"
       >
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-background to-transparent"></div>
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent"></div>
+        <div
+          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-accent to-primary opacity-10 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          style={{
+            clipPath:
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+          }}
+        />
       </div>
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Our Valued Sponsors
+            Exhibition Packages
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            We are proud to partner with these innovative companies.
+            Showcase your startup to thousands of potential investors and customers.
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {sponsorMedia.map((media, index) => (
-            <div
-              key={index}
-              className="group relative cursor-pointer overflow-hidden rounded-xl shadow-lg"
-            >
-              <Image
-                src={media.src}
-                alt={media.alt}
-                width={600}
-                height={400}
-                className="aspect-video h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
-                data-ai-hint={media.hint}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 group-hover:from-black/80" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                 {media.type === "video" && (
-                    <PlayCircle className="size-16 text-white/70 opacity-0 transition-all duration-300 group-hover:scale-110 group-hover:opacity-100" />
-                 )}
-              </div>
-              <div className="absolute inset-x-0 bottom-0 p-4">
-                <h3 className="font-headline text-xl font-bold text-white transition-transform duration-300 ease-in-out group-hover:-translate-y-2">
-                  {media.name}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="mx-auto mt-12 w-full max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-5xl"
+        >
+          <CarouselContent className="-ml-4">
+            {sponsorPackages.map((pkg, index) => (
+              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/2">
+                <div className="group relative aspect-video h-[400px] w-full cursor-pointer overflow-hidden rounded-xl shadow-lg">
+                  <Image
+                    src={pkg.image}
+                    alt={pkg.name}
+                    width={600}
+                    height={400}
+                    className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                    data-ai-hint={pkg.hint}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                    <h3 className="font-headline text-2xl font-bold">
+                      {pkg.name}
+                    </h3>
+                    <p className="mt-2 max-w-xs text-sm text-white/90">
+                      {pkg.description}
+                    </p>
+                    <div className="mt-4">
+                      <div className="inline-block rounded-full border border-white/50 px-4 py-1.5 text-sm font-semibold">
+                        {pkg.price}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-[-1rem] sm:left-[-2rem] md:left-[-3rem]" />
+          <CarouselNext className="right-[-1rem] sm:right-[-2rem] md:right-[-3rem]" />
+        </Carousel>
       </div>
     </section>
   );
