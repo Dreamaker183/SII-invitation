@@ -69,21 +69,21 @@ export default function Stats() {
 
   return (
     <section id="stats" className="py-16 sm:py-24">
-      <div className="container mx-auto px-4 mb-12 text-center">
-        <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Event Highlights
-        </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Everything you need to know about the conference.
-        </p>
-      </div>
       <div
         ref={sectionRef}
         className="relative"
         style={{ height: `${details.length * 75}vh` }}
       >
-        <div className="sticky top-1/2 -translate-y-1/2 flex h-[60vh] max-h-[700px] w-full items-center justify-center overflow-hidden">
-          <div className="container mx-auto px-4 h-full">
+        <div className="sticky top-0 flex h-screen w-full flex-col items-center justify-center overflow-hidden">
+            <div className="container mx-auto px-4 mb-12 text-center">
+                <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Event Highlights
+                </h2>
+                <p className="mt-4 text-lg text-muted-foreground">
+                Everything you need to know about the conference.
+                </p>
+            </div>
+          <div className="container mx-auto px-4 h-[60vh] max-h-[700px] w-full">
             <div className="flex h-full items-center justify-center gap-4">
               {details.map((item, index) => (
                 <div
@@ -93,14 +93,13 @@ export default function Stats() {
                     cardColors[index % cardColors.length],
                     activeIndex === index ? "w-[70%]" : "w-[10%] cursor-pointer"
                   )}
-                  onClick={() => {
-                     // This onClick is now a helper, but scroll is the primary driver
-                    const section = sectionRef.current;
-                    if (!section) return;
-                    const scrollableHeight = section.scrollHeight - window.innerHeight;
-                    const targetScrollY = window.scrollY + section.getBoundingClientRect().top + (scrollableHeight / details.length) * index;
-                    window.scrollTo({ top: targetScrollY, behavior: 'smooth' });
-                  }}
+                   onClick={() => {
+                     const section = sectionRef.current;
+                     if (!section) return;
+                     const scrollableHeight = section.scrollHeight - window.innerHeight;
+                     const targetScrollY = window.scrollY + section.getBoundingClientRect().top + (scrollableHeight / details.length) * index;
+                     window.scrollTo({ top: targetScrollY, behavior: 'smooth' });
+                   }}
                 >
                   <div className={cn(
                       "transition-opacity duration-500",
