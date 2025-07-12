@@ -62,19 +62,19 @@ export default function Sponsors() {
             align: "start",
             loop: true,
           }}
-          className="mx-auto mt-12 w-full max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-5xl"
+          className="mt-12 w-full"
         >
           <CarouselContent className="-ml-4">
             {sponsorPackages.map((pkg, index) => (
               <CarouselItem
                 key={index}
-                className="pl-4 md:basis-1/2 lg:basis-2/3"
+                className="pl-4 basis-full md:basis-3/4 lg:basis-2/3"
               >
-                <div className="group relative aspect-[2/1] w-full cursor-pointer overflow-hidden rounded-xl shadow-lg">
+                <div className="group relative aspect-[2.5/1] w-full cursor-pointer overflow-hidden rounded-xl shadow-lg">
                   <Image
                     src={pkg.image}
                     alt={pkg.name}
-                    width={800}
+                    width={1000}
                     height={400}
                     className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                     data-ai-hint={pkg.hint}
