@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://grindsite-demo.web.app'),
   title: "Startup Grind Conference 2025 | Connect, Learn, Grow",
   description: "Join 5,000+ entrepreneurs, investors, and startup enthusiasts at the premier startup conference. Network with VCs, learn from successful founders, and accelerate your startup journey.",
   keywords: ["startup conference", "entrepreneur networking", "venture capital", "startup funding"],
