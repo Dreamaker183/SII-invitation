@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Users, Rocket, Lightbulb } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -40,7 +39,7 @@ const details = [
       "Recruit top talent for your team.",
       "Get inspired by success stories.",
     ],
-    className: "lg:col-span-2 bg-primary/5",
+    className: "bg-primary/5",
   },
 ];
 
@@ -64,29 +63,27 @@ export default function Stats() {
               key={item.title}
               onClick={() => setActiveIndex(index)}
               className={cn(
-                "relative cursor-pointer rounded-lg p-6 shadow-md transition-all duration-500 ease-in-out",
+                "relative cursor-pointer overflow-hidden rounded-lg p-6 shadow-md transition-all duration-700 ease-in-out",
                 item.className,
-                activeIndex === index ? "flex-[5]" : "flex-[1]"
+                activeIndex === index ? "flex-[7]" : "flex-[1]"
               )}
             >
-              <div className="flex h-full flex-col overflow-hidden">
-                <div className="flex items-center gap-4">
+              <div className="flex h-full flex-col">
+                <div
+                  className={cn(
+                    "flex items-center gap-4 transition-all duration-500 ease-in-out",
+                    activeIndex !== index && "opacity-0"
+                  )}
+                >
                   <div className="text-primary">{item.icon}</div>
-                  <h3
-                    className={cn(
-                      "font-headline text-2xl font-bold text-foreground transition-opacity duration-300",
-                      activeIndex !== index && "md:opacity-0"
-                    )}
-                  >
+                  <h3 className="font-headline text-2xl font-bold text-foreground">
                     {item.title}
                   </h3>
                 </div>
                 <div
                   className={cn(
-                    "mt-4 flex-grow transition-all duration-500 ease-in-out",
-                    activeIndex === index
-                      ? "opacity-100 max-h-full"
-                      : "opacity-0 max-h-0"
+                    "mt-4 flex-grow transition-opacity duration-300 delay-300 ease-in-out",
+                    activeIndex === index ? "opacity-100" : "opacity-0"
                   )}
                 >
                   {item.description && (
@@ -105,8 +102,8 @@ export default function Stats() {
                 </div>
               </div>
               {activeIndex !== index && (
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 transform whitespace-nowrap">
-                   <h3 className="font-headline text-xl font-bold text-foreground/70">
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                   <h3 className="font-headline text-xl font-bold text-foreground/70 [writing-mode:vertical-lr]">
                     {item.title}
                   </h3>
                 </div>
