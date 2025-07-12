@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -50,7 +51,7 @@ export default function Schedule() {
       <div 
         ref={sectionRef} 
         className="relative" 
-        style={{ height: `${scheduleData.length * 80}vh` }}
+        style={{ height: `${scheduleData.length * 50}vh` }}
       >
         <div className="sticky top-0 flex h-screen w-full flex-col items-center justify-start overflow-hidden">
            <div className="container mx-auto px-4 pt-16 mb-12 text-center">
