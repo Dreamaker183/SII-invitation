@@ -4,7 +4,7 @@ import Logos from '@/components/sections/logos';
 import Stats from '@/components/sections/stats';
 import Schedule from '@/components/sections/schedule';
 import Speakers from '@/components/sections/speakers';
-import Tickets from '@/components/sections/tickets';
+import SponsorsGrid from '@/components/sections/sponsors-grid';
 import Sponsors from '@/components/sections/sponsors';
 import Location from '@/components/sections/location';
 import Newsletter from '@/components/sections/newsletter';
@@ -23,7 +23,7 @@ export default function Home() {
         <Schedule />
         <Speakers />
         <Sponsors />
-        <Tickets />
+        <SponsorsGrid />
         <Location />
         <Newsletter />
       </main>
