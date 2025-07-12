@@ -1,9 +1,4 @@
 import Image from "next/image";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 
 const sponsorPackages = [
   {
@@ -57,25 +52,19 @@ export default function Sponsors() {
           </p>
         </div>
 
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="mt-12 w-full"
-        >
-          <CarouselContent className="-ml-4">
+        <div className="mt-12">
+          <div className="flex w-full space-x-8 overflow-x-auto pb-4">
             {sponsorPackages.map((pkg, index) => (
-              <CarouselItem
+              <div
                 key={index}
-                className="pl-4 basis-full md:basis-3/4 lg:basis-2/3"
+                className="w-[80vw] flex-shrink-0 md:w-[60vw] lg:w-[45vw]"
               >
-                <div className="group relative aspect-[2.5/1] w-full cursor-pointer overflow-hidden rounded-xl shadow-lg">
+                <div className="group relative aspect-[2/1] w-full cursor-pointer overflow-hidden rounded-xl shadow-lg">
                   <Image
                     src={pkg.image}
                     alt={pkg.name}
                     width={1000}
-                    height={400}
+                    height={500}
                     className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                     data-ai-hint={pkg.hint}
                   />
@@ -94,10 +83,10 @@ export default function Sponsors() {
                     </div>
                   </div>
                 </div>
-              </CarouselItem>
+              </div>
             ))}
-          </CarouselContent>
-        </Carousel>
+          </div>
+        </div>
       </div>
     </section>
   );
