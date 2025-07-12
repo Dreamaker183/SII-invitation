@@ -6,7 +6,7 @@ const testimonials = [
     type: "quote",
     quote: "Ultimately, what makes an entrepreneur is the internal drive and grit. It's something that you can't teach.",
     author: "Daphne Koller, Insitro",
-    className: "bg-blue-200/20 text-foreground",
+    className: "bg-primary-foreground/10",
   },
   {
     type: "image-quote",
@@ -27,7 +27,7 @@ const testimonials = [
     type: "quote",
     quote: "The best startups are explicitly trying to make the world better.",
     author: "Paul Graham",
-    className: "bg-red-500/20 text-foreground",
+    className: "bg-primary-foreground/10",
   },
   {
     type: "photo-quote",
@@ -35,7 +35,7 @@ const testimonials = [
     hint: "man portrait",
     quote: "That's why I love that it's called the Startup Grind. It's a grind. It's freaking work. Work is what we do and it's going to be a grind. As Seth Godin says, \"you just gotta learn to dance with it\".",
     author: "Ryan Smith, Qualtrics & Utah Jazz",
-    className: "bg-red-400/20 text-foreground",
+    className: "bg-primary-foreground/10",
   },
 ];
 
@@ -43,12 +43,12 @@ const allTestimonials = [...testimonials, ...testimonials];
 
 export default function Speakers() {
   return (
-    <section id="speakers" className="bg-background py-16 sm:py-24">
+    <section id="speakers" className="bg-primary text-primary-foreground py-16 sm:py-24">
        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             Words from the Wise
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-lg text-primary-foreground/80">
             Inspiration from the leaders who have been there and done that.
           </p>
         </div>
