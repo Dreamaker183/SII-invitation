@@ -27,13 +27,6 @@ const details = [
   },
 ];
 
-const cardColors = [
-  "bg-blue-100/50 dark:bg-blue-900/20",
-  "bg-purple-100/50 dark:bg-purple-900/20",
-  "bg-green-100/50 dark:bg-green-900/20",
-  "bg-yellow-100/50 dark:bg-yellow-900/20",
-];
-
 export default function Stats() {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const sectionRef = React.useRef<HTMLDivElement>(null);
@@ -90,7 +83,7 @@ export default function Stats() {
                   key={item.title}
                   className={cn(
                     "relative h-full rounded-2xl p-8 transition-all duration-700 ease-in-out flex flex-col justify-center",
-                    cardColors[index % cardColors.length],
+                    "bg-blue-100/50 dark:bg-blue-900/20",
                     activeIndex === index ? "w-[70%]" : "w-[10%] cursor-pointer"
                   )}
                    onClick={() => {
@@ -102,8 +95,8 @@ export default function Stats() {
                    }}
                 >
                   <div className={cn(
-                      "transition-opacity duration-500",
-                      activeIndex === index ? "opacity-100 delay-500" : "opacity-0"
+                      "transition-opacity",
+                      activeIndex === index ? "opacity-100 delay-500 duration-500" : "opacity-0 duration-0"
                     )}>
                       <div className="mb-6 text-primary">{item.icon}</div>
                       <h3 className="font-headline text-3xl font-bold text-foreground">
