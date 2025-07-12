@@ -49,11 +49,13 @@ export default function Header() {
         <a href="#" className="flex items-center space-x-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
+            viewBox="0 0 256 256"
             className="size-8 text-primary"
           >
-            <path d="M14.25 2.25a.75.75 0 0 1 .75.75v18a.75.75 0 0 1-1.5 0v-18a.75.75 0 0 1 .75-.75Zm-4.5 0a.75.75 0 0 1 .75.75v18a.75.75 0 0 1-1.5 0v-18a.75.75 0 0 1 .75-.75Zm-4.5 0a.75.75 0 0 1 .75.75v18a.75.75 0 0 1-1.5 0v-18a.75.75 0 0 1 .75-.75Zm13.5 0a.75.75 0 0 1 .75.75v18a.75.75 0 0 1-1.5 0v-18a.75.75 0 0 1 .75-.75Z" />
+            <path
+              fill="currentColor"
+              d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88Zm-44-36a8 8 0 0 1-8-8V80a8 8 0 0 1 16 0v92a8 8 0 0 1-8 8Zm40-32a8 8 0 0 1-8-8V96a8 8 0 0 1 16 0v60a8 8 0 0 1-8 8Zm40 24a8 8 0 0 1-8-8V88a8 8 0 0 1 16 0v84a8 8 0 0 1-8 8Z"
+            ></path>
           </svg>
 
           <span className="font-headline text-2xl font-bold text-foreground">
