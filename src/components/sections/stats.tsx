@@ -72,24 +72,24 @@ export default function Stats() {
       <div
         ref={sectionRef}
         className="relative"
-        style={{ height: `${details.length * 75}vh` }}
+        style={{ height: `${details.length * 50}vh` }}
       >
         <div className="sticky top-0 flex h-screen w-full flex-col items-center justify-center overflow-hidden">
-            <div className="container mx-auto px-4 mb-12 text-center">
-                <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Event Highlights
-                </h2>
-                <p className="mt-4 text-lg text-muted-foreground">
-                Everything you need to know about the conference.
-                </p>
-            </div>
+          <div className="container mx-auto px-4 mb-12 text-center">
+            <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Event Highlights
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Everything you need to know about the conference.
+            </p>
+          </div>
           <div className="container mx-auto px-4 h-[60vh] max-h-[700px] w-full">
             <div className="flex h-full items-center justify-center gap-4">
               {details.map((item, index) => (
                 <div
                   key={item.title}
                   className={cn(
-                    "relative h-full rounded-2xl p-8 transition-all duration-500 ease-in-out flex flex-col justify-center",
+                    "relative h-full rounded-2xl p-8 transition-all duration-700 ease-in-out flex flex-col justify-center",
                     cardColors[index % cardColors.length],
                     activeIndex === index ? "w-[70%]" : "w-[10%] cursor-pointer"
                   )}
@@ -102,9 +102,8 @@ export default function Stats() {
                    }}
                 >
                   <div className={cn(
-                      activeIndex === index
-                        ? "opacity-100 transition-opacity duration-500 delay-300"
-                        : "opacity-0"
+                      "transition-opacity duration-500",
+                      activeIndex === index ? "opacity-100 delay-500" : "opacity-0"
                     )}>
                       <div className="mb-6 text-primary">{item.icon}</div>
                       <h3 className="font-headline text-3xl font-bold text-foreground">
