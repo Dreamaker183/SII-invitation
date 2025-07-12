@@ -15,7 +15,7 @@ export default function Logos() {
   const allLogos = [...logos, ...logos]; // Duplicate for seamless scroll
 
   return (
-    <div className="bg-primary py-12">
+    <div className="bg-gradient-to-r from-primary to-accent py-12">
       <div className="container mx-auto px-4">
         <p className="text-center font-semibold text-primary-foreground/80">
           Trusted by the world&apos;s most innovative companies
@@ -46,7 +46,7 @@ export default function Logos() {
             aria-hidden="true"
           />
           <div
-            className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-primary to-transparent"
+            className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-accent to-transparent"
             aria-hidden="true"
           />
         </div>
