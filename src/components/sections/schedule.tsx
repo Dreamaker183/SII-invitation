@@ -88,7 +88,7 @@ export default function Schedule() {
                       index % 2 === 0 ? "justify-start" : "justify-end"
                     )}>
                       <div className={cn(
-                        "absolute left-1/2 -translate-x-1/2 size-4 rounded-full border-2 border-[hsl(var(--primary-blue))] bg-background z-10"
+                        "absolute left-1/2 -translate-x-1/2 size-4 rounded-full border-2 border-primary bg-background z-10"
                       )}/>
 
                       <Card className={cn("w-full max-w-sm", index % 2 === 0 ? "ml-[calc(50%+1.5rem)]" : "mr-[calc(50%+1.5rem)]")}>
