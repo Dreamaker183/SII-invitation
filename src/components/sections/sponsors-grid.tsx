@@ -45,7 +45,7 @@ export default function SponsorsGrid() {
         {/* Organizer */}
         <div className="mb-12 text-center">
           <h3 className="text-xl font-semibold text-muted-foreground">主辦機構</h3>
-          <h2 className="mb-4 text-3xl font-bold text-primary">Organizer</h2>
+          <h2 className="mb-4 text-3xl font-bold text-gradient">Organizer</h2>
           <div className="flex flex-col items-center justify-center">
             <Image
               src={organizer.logo}
@@ -64,7 +64,7 @@ export default function SponsorsGrid() {
         <div className="mb-12 grid grid-cols-1 gap-12 md:grid-cols-2">
           <div className="text-center">
             <h3 className="text-xl font-semibold text-muted-foreground">贊助機構</h3>
-            <h2 className="mb-4 text-3xl font-bold text-primary">Funding Organization</h2>
+            <h2 className="mb-4 text-3xl font-bold text-gradient">Funding Organization</h2>
             <div className="flex justify-center">
               <Image
                 src={fundingOrg.logo}
@@ -78,7 +78,7 @@ export default function SponsorsGrid() {
           </div>
           <div className="text-center">
             <h3 className="text-xl font-semibold text-muted-foreground">夥伴機構</h3>
-            <h2 className="mb-4 text-3xl font-bold text-primary">Partner</h2>
+            <h2 className="mb-4 text-3xl font-bold text-gradient">Partner</h2>
             <div className="flex justify-center">
               <Image
                 src={partner.logo}
@@ -95,7 +95,7 @@ export default function SponsorsGrid() {
         {/* Co-Organizers */}
         <div className="text-center">
           <h3 className="text-xl font-semibold text-muted-foreground">協辦機構</h3>
-          <h2 className="mb-8 text-3xl font-bold text-primary">Co-Organizers</h2>
+          <h2 className="mb-8 text-3xl font-bold text-gradient">Co-Organizers</h2>
           <div className="grid grid-cols-2 place-items-center gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {coOrganizers.map((sponsor, index) => (
               <div

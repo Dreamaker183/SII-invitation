@@ -94,7 +94,7 @@ export default function Schedule() {
                       <Card className={cn("w-full max-w-sm", index % 2 === 0 ? "ml-[calc(50%+1.5rem)]" : "mr-[calc(50%+1.5rem)]")}>
                         <CardHeader>
                           <div className="flex items-center justify-between gap-2">
-                             <p className="font-bold text-[hsl(var(--primary-blue))] text-lg">
+                             <p className="font-bold text-gradient text-lg">
                               {session.time}
                             </p>
                              <Badge variant="secondary">{session.track}</Badge>

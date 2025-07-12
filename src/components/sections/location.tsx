@@ -39,7 +39,7 @@ export default function Location() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-start gap-4">
-                <MapPin className="mt-1 size-5 shrink-0 text-[hsl(var(--primary-blue))]" />
+                <MapPin className="mt-1 size-5 shrink-0 text-gradient" />
                 <div>
                   <h3 className="font-semibold">Address</h3>
                   <p className="text-sm text-muted-foreground">
@@ -50,7 +50,7 @@ export default function Location() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Phone className="mt-1 size-5 shrink-0 text-[hsl(var(--primary-blue))]" />
+                <Phone className="mt-1 size-5 shrink-0 text-gradient" />
                 <div>
                   <h3 className="font-semibold">Phone</h3>
                   <p className="text-sm text-muted-foreground">
@@ -59,7 +59,7 @@ export default function Location() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Mail className="mt-1 size-5 shrink-0 text-[hsl(var(--primary-blue))]" />
+                <Mail className="mt-1 size-5 shrink-0 text-gradient" />
                 <div>
                   <h3 className="font-semibold">Email</h3>
                   <p className="text-sm text-muted-foreground">
