@@ -5,7 +5,7 @@ import Stats from '@/components/sections/stats';
 import Schedule from '@/components/sections/schedule';
 import Speakers from '@/components/sections/speakers';
 import Tickets from '@/components/sections/tickets';
-import PersonalizedAgenda from '@/components/sections/personalized-agenda';
+import Sponsors from '@/components/sections/sponsors';
 import Location from '@/components/sections/location';
 import Newsletter from '@/components/sections/newsletter';
 import Footer from '@/components/layout/footer';
@@ -22,7 +22,7 @@ export default function Home() {
         <SocialProof />
         <Schedule />
         <Speakers />
-        <PersonalizedAgenda />
+        <Sponsors />
         <Tickets />
         <Location />
         <Newsletter />
