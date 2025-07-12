@@ -83,8 +83,8 @@ export default function Stats() {
                   key={item.title}
                   className={cn(
                     "relative h-full rounded-2xl p-8 transition-all duration-700 ease-in-out flex flex-col justify-center",
-                    "bg-blue-100/50 dark:bg-blue-900/20",
-                    activeIndex === index ? "w-[70%]" : "w-[10%] cursor-pointer"
+                    "bg-primary text-primary-foreground",
+                    activeIndex === index ? "w-[70%]" : "w-[10%] cursor-pointer bg-primary/20"
                   )}
                    onClick={() => {
                      const section = sectionRef.current;
@@ -98,11 +98,11 @@ export default function Stats() {
                       "transition-opacity",
                       activeIndex === index ? "opacity-100 delay-500 duration-500" : "opacity-0 duration-0"
                     )}>
-                      <div className="mb-6 text-primary">{item.icon}</div>
-                      <h3 className="font-headline text-3xl font-bold text-foreground">
+                      <div className="mb-6 text-primary-foreground">{item.icon}</div>
+                      <h3 className="font-headline text-3xl font-bold text-primary-foreground">
                         {item.title}
                       </h3>
-                      <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+                      <p className="mt-4 max-w-2xl text-lg text-primary-foreground/80">
                         {item.description}
                       </p>
                   </div>
