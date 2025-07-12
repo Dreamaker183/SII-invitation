@@ -69,10 +69,7 @@ export default function Schedule() {
             <div className="w-full space-y-8 py-8">
               {scheduleData.map((session, index) => {
                  const itemProgressStart = index / scheduleData.length;
-                 const itemProgressEnd = (index + 0.8) / scheduleData.length;
-                 const opacity = scrollYProgress >= itemProgressStart && scrollYProgress < itemProgressEnd
-                    ? 1
-                    : Math.max(0, 1 - (Math.abs(scrollYProgress - (itemProgressStart + itemProgressEnd)/2)) * 10);
+                 const opacity = scrollYProgress >= itemProgressStart ? 1 : 0;
                 
                  const scale = Math.max(0.95, opacity);
                  const translateY = (1 - opacity) * 20;
