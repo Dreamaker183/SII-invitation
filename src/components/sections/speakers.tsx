@@ -10,7 +10,7 @@ const testimonials = [
   },
   {
     type: "image-quote",
-    image: "https://placehold.co/400x400",
+    image: "https://placehold.co/640x420",
     hint: "man portrait",
     quote: "THESE ARE OUR PEOPLE.",
     author: "Sam Altman, OpenAI",
@@ -18,7 +18,7 @@ const testimonials = [
   },
   {
     type: "image-only",
-    image: "https://placehold.co/400x400",
+    image: "https://placehold.co/420x200",
     hint: "woman portrait",
     author: "Daphne Koller",
     className: "",
@@ -52,8 +52,8 @@ export default function Speakers() {
             Inspiration from the leaders who have been there and done that.
           </p>
         </div>
-      <div className="relative mt-12 w-full overflow-hidden">
-        <div className="flex animate-scroll-left-slow">
+      <div className="relative mt-12 w-full overflow-x-auto [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+        <div className="flex w-max animate-scroll-left-slow">
           {allTestimonials.map((item, index) => (
             <div key={index} className="flex-shrink-0 px-3" style={{ width: "auto" }}>
               {item.type === "image-quote" && (
@@ -144,14 +144,6 @@ export default function Speakers() {
             </div>
           ))}
         </div>
-        <div
-            className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent"
-            aria-hidden="true"
-          />
-          <div
-            className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent"
-            aria-hidden="true"
-          />
       </div>
     </section>
   );

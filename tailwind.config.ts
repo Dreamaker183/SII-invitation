@@ -91,7 +91,7 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "scroll-left": "scroll-left 40s linear infinite",
-        "scroll-left-slow": "scroll-left-slow 80s linear infinite",
+        "scroll-left-slow": "scroll-left-slow 40s linear infinite",
       },
     },
   },
