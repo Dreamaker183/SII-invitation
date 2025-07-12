@@ -11,7 +11,6 @@ import Newsletter from '@/components/sections/newsletter';
 import SocialProof from '@/components/sections/social-proof';
 import Footer from '@/components/layout/footer';
 import { FadeInSection } from '@/components/fade-in-section';
-import PersonalizedAgenda from '@/components/sections/personalized-agenda';
 
 export default function Home() {
   return (
@@ -28,7 +27,6 @@ export default function Home() {
         <FadeInSection>
           <SocialProof />
         </FadeInSection>
-        <PersonalizedAgenda />
         <Schedule />
         <FadeInSection>
           <Speakers />
