@@ -43,7 +43,7 @@ const allTestimonials = [...testimonials, ...testimonials];
 
 export default function Speakers() {
   return (
-    <section id="speakers" className="bg-primary text-primary-foreground py-16 sm:py-24">
+    <section id="speakers" className="bg-primary-gradient text-primary-foreground py-16 sm:py-24">
        <div className="container mx-auto px-4 text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             Words from the Wise

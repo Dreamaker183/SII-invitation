@@ -83,8 +83,8 @@ export default function Stats() {
                   key={item.title}
                   className={cn(
                     "relative h-full rounded-2xl p-8 transition-all duration-700 ease-in-out flex flex-col justify-center",
-                    "bg-primary text-primary-foreground",
-                    activeIndex === index ? "w-[70%]" : "w-[10%] cursor-pointer bg-primary/20"
+                    "text-primary-foreground",
+                    activeIndex === index ? "w-[70%] bg-primary-gradient" : "w-[10%] cursor-pointer bg-primary/20"
                   )}
                    onClick={() => {
                      const section = sectionRef.current;

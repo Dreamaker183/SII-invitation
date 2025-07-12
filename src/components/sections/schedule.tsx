@@ -53,13 +53,13 @@ export default function Schedule() {
         className="relative" 
         style={{ height: `${scheduleData.length * 50}vh` }}
       >
-        <div className="sticky top-20 flex h-screen w-full flex-col items-center justify-start overflow-hidden">
+        <div className="sticky top-0 flex h-screen w-full flex-col items-center justify-start overflow-hidden">
            <div className="container mx-auto px-4 pt-16 mb-12 text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Conference Timeline
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              A play-by-play of the day&apos;s events.
+              A play-by-play of the day's events.
             </p>
           </div>
 
@@ -88,13 +88,13 @@ export default function Schedule() {
                       index % 2 === 0 ? "justify-start" : "justify-end"
                     )}>
                       <div className={cn(
-                        "absolute left-1/2 -translate-x-1/2 size-4 rounded-full border-2 border-primary bg-background z-10"
+                        "absolute left-1/2 -translate-x-1/2 size-4 rounded-full border-2 border-[hsl(var(--primary-blue))] bg-background z-10"
                       )}/>
 
                       <Card className={cn("w-full max-w-sm", index % 2 === 0 ? "ml-[calc(50%+1.5rem)]" : "mr-[calc(50%+1.5rem)]")}>
                         <CardHeader>
                           <div className="flex items-center justify-between gap-2">
-                             <p className="font-bold text-primary text-lg">
+                             <p className="font-bold text-[hsl(var(--primary-blue))] text-lg">
                               {session.time}
                             </p>
                              <Badge variant="secondary">{session.track}</Badge>

@@ -10,7 +10,9 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 231 48% 48%; /* Deep Indigo */
+    --primary: 231 48% 48%; /* Deep Indigo - Fallback */
+    --primary-blue: 231 48% 48%;
+    --primary-purple: 256 100% 65%;
     --primary-foreground: 210 40% 98%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -38,6 +40,8 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
     --primary: 231 48% 48%;
+    --primary-blue: 231 48% 48%;
+    --primary-purple: 256 100% 65%;
     --primary-foreground: 210 40% 98%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
@@ -64,5 +68,11 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .bg-primary-gradient {
+    background: linear-gradient(to right, hsl(var(--primary-blue)), hsl(var(--primary-purple)));
   }
 }
