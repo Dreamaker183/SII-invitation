@@ -102,8 +102,9 @@ export default function Stats() {
                    }}
                 >
                   <div className={cn(
-                      "transition-opacity duration-500",
-                      activeIndex === index ? "opacity-100" : "opacity-0 h-0"
+                      activeIndex === index
+                        ? "opacity-100 transition-opacity duration-500 delay-300"
+                        : "opacity-0"
                     )}>
                       <div className="mb-6 text-primary">{item.icon}</div>
                       <h3 className="font-headline text-3xl font-bold text-foreground">
