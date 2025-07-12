@@ -10,22 +10,39 @@ import Location from '@/components/sections/location';
 import Newsletter from '@/components/sections/newsletter';
 import SocialProof from '@/components/sections/social-proof';
 import Footer from '@/components/layout/footer';
+import { FadeInSection } from '@/components/fade-in-section';
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main className="flex-1">
-        <Hero />
-        <Logos />
+        <FadeInSection>
+          <Hero />
+        </FadeInSection>
+        <FadeInSection>
+          <Logos />
+        </FadeInSection>
         <Stats />
-        <SocialProof />
+        <FadeInSection>
+          <SocialProof />
+        </FadeInSection>
         <Schedule />
-        <Speakers />
-        <Sponsors />
-        <SponsorsGrid />
-        <Location />
-        <Newsletter />
+        <FadeInSection>
+          <Speakers />
+        </FadeInSection>
+        <FadeInSection>
+          <Sponsors />
+        </FadeInSection>
+        <FadeInSection>
+          <SponsorsGrid />
+        </FadeInSection>
+        <FadeInSection>
+          <Location />
+        </FadeInSection>
+        <FadeInSection>
+          <Newsletter />
+        </FadeInSection>
       </main>
       <Footer />
     </div>
