@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -68,41 +69,37 @@ export default function Stats() {
                 activeIndex === index ? "flex-[7]" : "flex-[1]"
               )}
             >
-              <div className="flex h-full flex-col">
-                <div
-                  className={cn(
-                    "flex items-center gap-4 transition-all duration-500 ease-in-out",
-                    activeIndex !== index && "opacity-0"
-                  )}
-                >
-                  <div className="text-primary">{item.icon}</div>
-                  <h3 className="font-headline text-2xl font-bold text-foreground">
-                    {item.title}
-                  </h3>
+              {activeIndex === index ? (
+                <div className="flex h-full flex-col">
+                  <div className="flex items-center gap-4">
+                    <div className="text-primary">{item.icon}</div>
+                    <h3 className="font-headline text-2xl font-bold text-foreground">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <div
+                    className={cn(
+                      "mt-4 flex-grow transition-opacity duration-500 delay-300 ease-in-out",
+                       "opacity-100"
+                    )}
+                  >
+                    {item.description && (
+                      <p className="text-muted-foreground">{item.description}</p>
+                    )}
+                    {item.list && (
+                      <ul className="mt-2 space-y-2 text-muted-foreground">
+                        {item.list.map((point) => (
+                          <li key={point} className="flex items-center gap-2">
+                            <CheckCircle2 className="size-4 shrink-0 text-primary/80" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </div>
-                <div
-                  className={cn(
-                    "mt-4 flex-grow transition-opacity duration-300 delay-300 ease-in-out",
-                    activeIndex === index ? "opacity-100" : "opacity-0"
-                  )}
-                >
-                  {item.description && (
-                    <p className="text-muted-foreground">{item.description}</p>
-                  )}
-                  {item.list && (
-                    <ul className="mt-2 space-y-2 text-muted-foreground">
-                      {item.list.map((point) => (
-                        <li key={point} className="flex items-center gap-2">
-                          <CheckCircle2 className="size-4 shrink-0 text-primary/80" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
-              {activeIndex !== index && (
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              ) : (
+                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                    <h3 className="font-headline text-xl font-bold text-foreground/70 [writing-mode:vertical-lr]">
                     {item.title}
                   </h3>
