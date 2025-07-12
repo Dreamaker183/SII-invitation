@@ -1,48 +1,118 @@
 import Image from "next/image";
 
-const sponsors = [
-  { name: "Sponsor 1", src: "https://placehold.co/160x80" },
-  { name: "Sponsor 2", src: "https://placehold.co/160x80" },
-  { name: "Sponsor 3", src: "https://placehold.co/160x80" },
-  { name: "Sponsor 4", src: "https://placehold.co/160x80" },
-  { name: "Sponsor 5", src: "https://placehold.co/160x80" },
-  { name: "Sponsor 6", src: "https://placehold.co/160x80" },
-  { name: "Sponsor 7", src: "https://placehold.co/160x80" },
-  { name: "Sponsor 8", src: "https://placehold.co/160x80" },
-  { name: "Sponsor 9", src: "https://placehold.co/160x80" },
-  { name: "Sponsor 10", src: "https://placehold.co/160x80" },
-  { name: "Sponsor 11", src: "https://placehold.co/160x80" },
-  { name: "Sponsor 12", src: "https://placehold.co/160x80" },
+const organizer = {
+  name: "Hong Kong New Generation Cultural Association",
+  subName: "創立於1974年公共性質慈善機構",
+  logo: "https://placehold.co/250x100",
+  hint: "association logo",
+};
+
+const fundingOrg = {
+  name: "Innovation and Technology Commission",
+  logo: "https://placehold.co/200x100",
+  hint: "commission logo",
+};
+
+const partner = {
+  name: "Bank of China (Hong Kong)",
+  logo: "https://placehold.co/200x100",
+  hint: "bank logo",
+};
+
+const coOrganizers = [
+  { name: "The University of Hong Kong", logo: "https://placehold.co/160x80", hint: "university logo" },
+  { name: "The Chinese University of Hong Kong", logo: "https://placehold.co/160x80", hint: "university logo" },
+  { name: "The Hong Kong University of Science and Technology", logo: "https://placehold.co/160x80", hint: "university logo" },
+  { name: "The Hong Kong Polytechnic University", logo: "https://placehold.co/160x80", hint: "university logo" },
+  { name: "City University of Hong Kong", logo: "https://placehold.co/160x80", hint: "university logo" },
+  { name: "Hong Kong Baptist University", logo: "https://placehold.co/160x80", hint: "university logo" },
+  { name: "Lingnan University", logo: "https://placehold.co/160x80", hint: "university logo" },
+  { name: "The Education University of Hong Kong", logo: "https://placehold.co/160x80", hint: "university logo" },
+  { name: "Hong Kong Metropolitan University", logo: "https://placehold.co/160x80", hint: "university logo" },
+  { name: "The Hang Seng University of Hong Kong", logo: "https://placehold.co/160x80", hint: "university logo" },
+  { name: "Hong Kong Shue Yan University", logo: "https://placehold.co/160x80", hint: "university logo" },
+  { name: "Saint Francis University", logo: "https://placehold.co/160x80", hint: "university logo" },
+  { name: "Tung Wah College", logo: "https://placehold.co/160x80", hint: "college logo" },
+  { name: "VTC", logo: "https://placehold.co/160x80", hint: "education logo" },
+  { name: "Cyberport", logo: "https://placehold.co/160x80", hint: "tech logo" },
+  { name: "Hong Kong Software Industry Association", logo: "https://placehold.co/160x80", hint: "association logo" },
 ];
 
 export default function SponsorsGrid() {
   return (
-    <section id="sponsors" className="py-16 sm:py-24">
+    <section id="sponsors" className="bg-primary/5 py-16 sm:py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Our Valued Sponsors
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            We are proud to partner with these innovative companies.
-          </p>
+        {/* Organizer */}
+        <div className="mb-12 text-center">
+          <h3 className="text-xl font-semibold text-muted-foreground">主辦機構</h3>
+          <h2 className="mb-4 text-3xl font-bold text-primary">Organizer</h2>
+          <div className="flex flex-col items-center justify-center">
+            <Image
+              src={organizer.logo}
+              alt={organizer.name}
+              width={250}
+              height={100}
+              className="mb-2 max-h-24 w-auto object-contain"
+              data-ai-hint={organizer.hint}
+            />
+            <p className="font-semibold text-foreground">{organizer.name}</p>
+            <p className="text-sm text-muted-foreground">{organizer.subName}</p>
+          </div>
         </div>
-        <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
-          {sponsors.map((sponsor, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center rounded-lg bg-muted/30 p-4 transition-transform hover:scale-105 hover:bg-muted/70"
-            >
+
+        {/* Funding and Partner */}
+        <div className="mb-12 grid grid-cols-1 gap-12 md:grid-cols-2">
+          <div className="text-center">
+            <h3 className="text-xl font-semibold text-muted-foreground">贊助機構</h3>
+            <h2 className="mb-4 text-3xl font-bold text-primary">Funding Organization</h2>
+            <div className="flex justify-center">
               <Image
-                src={sponsor.src}
-                alt={sponsor.name}
-                width={160}
-                height={80}
-                className="max-h-16 w-auto object-contain"
-                data-ai-hint="company logo"
+                src={fundingOrg.logo}
+                alt={fundingOrg.name}
+                width={200}
+                height={100}
+                className="max-h-24 w-auto object-contain"
+                data-ai-hint={fundingOrg.hint}
               />
             </div>
-          ))}
+          </div>
+          <div className="text-center">
+            <h3 className="text-xl font-semibold text-muted-foreground">夥伴機構</h3>
+            <h2 className="mb-4 text-3xl font-bold text-primary">Partner</h2>
+            <div className="flex justify-center">
+              <Image
+                src={partner.logo}
+                alt={partner.name}
+                width={200}
+                height={100}
+                className="max-h-24 w-auto object-contain"
+                data-ai-hint={partner.hint}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Co-Organizers */}
+        <div className="text-center">
+          <h3 className="text-xl font-semibold text-muted-foreground">協辦機構</h3>
+          <h2 className="mb-8 text-3xl font-bold text-primary">Co-Organizers</h2>
+          <div className="grid grid-cols-2 place-items-center gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            {coOrganizers.map((sponsor, index) => (
+              <div
+                key={index}
+                className="flex h-20 w-40 items-center justify-center p-2"
+              >
+                <Image
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  width={160}
+                  height={80}
+                  className="max-h-16 w-auto object-contain transition-transform hover:scale-105"
+                  data-ai-hint={sponsor.hint}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
