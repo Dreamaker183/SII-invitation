@@ -3,31 +3,31 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 const sponsorPackages = [
   {
     name: "Scaleup Exhibition Package",
-    description: "For Seed to Series A startups seeking their next round of funding.",
+    description:
+      "For Seed to Series A startups seeking their next round of funding.",
     price: "$4999",
-    image: "https://placehold.co/600x400",
-    hint: "conference speaker stage"
+    image: "https://placehold.co/800x400",
+    hint: "conference speaker stage",
   },
   {
     name: "Startup Exhibition Package",
-    description: "For Bootstrapped to Seed startups looking to accelerate growth.",
+    description:
+      "For Bootstrapped to Seed startups looking to accelerate growth.",
     price: "$2499",
-    image: "https://placehold.co/600x400",
-    hint: "startup pitch event"
+    image: "https://placehold.co/800x400",
+    hint: "startup pitch event",
   },
   {
     name: "Unicorn Exhibition Package",
     description: "Premium placement for established industry leaders.",
     price: "$9999",
-    image: "https://placehold.co/600x400",
-    hint: "corporate event"
+    image: "https://placehold.co/800x400",
+    hint: "corporate event",
   },
 ];
 
@@ -52,7 +52,8 @@ export default function Sponsors() {
             Exhibition Packages
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Showcase your startup to thousands of potential investors and customers.
+            Showcase your startup to thousands of potential investors and
+            customers.
           </p>
         </div>
 
@@ -65,12 +66,15 @@ export default function Sponsors() {
         >
           <CarouselContent className="-ml-4">
             {sponsorPackages.map((pkg, index) => (
-              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/2">
-                <div className="group relative aspect-video h-[400px] w-full cursor-pointer overflow-hidden rounded-xl shadow-lg">
+              <CarouselItem
+                key={index}
+                className="pl-4 md:basis-1/2 lg:basis-2/3"
+              >
+                <div className="group relative aspect-[2/1] w-full cursor-pointer overflow-hidden rounded-xl shadow-lg">
                   <Image
                     src={pkg.image}
                     alt={pkg.name}
-                    width={600}
+                    width={800}
                     height={400}
                     className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                     data-ai-hint={pkg.hint}
@@ -93,8 +97,6 @@ export default function Sponsors() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-[-1rem] sm:left-[-2rem] md:left-[-3rem]" />
-          <CarouselNext className="right-[-1rem] sm:right-[-2rem] md:right-[-3rem]" />
         </Carousel>
       </div>
     </section>
