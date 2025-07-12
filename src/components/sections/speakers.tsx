@@ -1,100 +1,157 @@
 import Image from "next/image";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
-const speakers = [
+const testimonials = [
   {
-    name: "Alex Thompson",
-    title: "CEO, FutureCorp",
-    image: "https://placehold.co/400x400",
-    hint: "man portrait"
+    type: "quote",
+    quote: "Ultimately, what makes an entrepreneur is the internal drive and grit. It's something that you can't teach.",
+    author: "Daphne Koller, Insitro",
+    className: "bg-blue-200/20 text-foreground",
   },
   {
-    name: "Dr. Evelyn Reed",
-    title: "Chief AI Scientist, QuantumLeap",
+    type: "image-quote",
     image: "https://placehold.co/400x400",
-    hint: "woman portrait"
+    hint: "man portrait",
+    quote: "THESE ARE OUR PEOPLE.",
+    author: "Sam Altman, OpenAI",
+    className: "",
   },
   {
-    name: "Ben Carter",
-    title: "Growth Lead, ScaleUp",
+    type: "image-only",
     image: "https://placehold.co/400x400",
-    hint: "man portrait"
+    hint: "woman portrait",
+    author: "Daphne Koller",
+    className: "",
+  },
+   {
+    type: "quote",
+    quote: "The best startups are explicitly trying to make the world better.",
+    author: "Paul Graham",
+    className: "bg-red-500/20 text-foreground",
   },
   {
-    name: "Olivia Chen",
-    title: "Partner, Vision Ventures",
-    image: "https://placehold.co/400x400",
-    hint: "woman portrait"
-  },
-  {
-    name: "Marcus Kane",
-    title: "Head of Product, InnovateU",
-    image: "https://placehold.co/400x400",
-    hint: "man portrait"
-  },
-  {
-    name: "Jessica Miller",
-    title: "Founder, Unicorn Inc.",
-    image: "https://placehold.co/400x400",
-    hint: "woman portrait"
-  },
-  {
-    name: "David Lee",
-    title: "SaaS Guru, CloudNative",
-    image: "https://placehold.co/400x400",
-    hint: "man portrait"
-  },
-  {
-    name: "Sophia Rodriguez",
-    title: "Angel Investor",
-    image: "https://placehold.co/400x400",
-    hint: "woman portrait"
+    type: "photo-quote",
+    image: "https://placehold.co/200x200",
+    hint: "man portrait",
+    quote: "That's why I love that it's called the Startup Grind. It's a grind. It's freaking work. Work is what we do and it's going to be a grind. As Seth Godin says, \"you just gotta learn to dance with it\".",
+    author: "Ryan Smith, Qualtrics & Utah Jazz",
+    className: "bg-red-400/20 text-foreground",
   },
 ];
 
+const allTestimonials = [...testimonials, ...testimonials];
+
 export default function Speakers() {
   return (
-    <section id="speakers" className="bg-muted/50 py-16 sm:py-24">
-      <div className="container mx-auto px-4">
-        <div className="text-center">
+    <section id="speakers" className="bg-background py-16 sm:py-24">
+       <div className="container mx-auto px-4 text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Meet Our Speakers
+            Words from the Wise
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Learn from the brightest minds in the industry.
+            Inspiration from the leaders who have been there and done that.
           </p>
         </div>
-
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {speakers.map((speaker) => (
-            <div
-              key={speaker.name}
-              className="group relative overflow-hidden rounded-lg shadow-lg"
-            >
-              <Image
-                src={speaker.image}
-                alt={`Portrait of ${speaker.name}`}
-                width={400}
-                height={400}
-                className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
-                data-ai-hint={speaker.hint}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-                <h3 className="font-headline text-xl font-semibold">
-                  {speaker.name}
-                </h3>
-                <p className="text-sm text-white/90">{speaker.title}</p>
-              </div>
+      <div className="relative mt-12 w-full overflow-hidden">
+        <div className="flex animate-scroll-left-slow">
+          {allTestimonials.map((item, index) => (
+            <div key={index} className="flex-shrink-0 px-3" style={{ width: "auto" }}>
+              {item.type === "image-quote" && (
+                <div
+                  className={cn(
+                    "relative h-[420px] w-[640px] overflow-hidden rounded-2xl",
+                    item.className
+                  )}
+                >
+                  <Image
+                    src={item.image}
+                    alt={`Photo of ${item.author}`}
+                    width={640}
+                    height={420}
+                    className="h-full w-full object-cover"
+                    data-ai-hint={item.hint}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
+                    <blockquote className="font-headline text-4xl font-bold leading-tight">
+                      &ldquo;{item.quote}&rdquo;
+                    </blockquote>
+                    <cite className="mt-4 not-italic font-semibold uppercase tracking-widest">
+                      {item.author}
+                    </cite>
+                  </div>
+                </div>
+              )}
+              {item.type === "quote" && (
+                <div
+                  className={cn(
+                    "flex h-[200px] w-[420px] flex-col justify-between rounded-2xl p-8",
+                    item.className
+                  )}
+                >
+                   <blockquote className="text-lg font-medium">
+                      &ldquo;{item.quote}&rdquo;
+                    </blockquote>
+                    <cite className="mt-4 not-italic font-semibold uppercase tracking-widest">
+                      {item.author}
+                    </cite>
+                </div>
+              )}
+              {item.type === "image-only" && (
+                 <div
+                  className={cn(
+                    "relative h-[200px] w-[420px] overflow-hidden rounded-2xl",
+                    item.className
+                  )}
+                >
+                  <Image
+                    src={item.image}
+                    alt={`Photo of ${item.author}`}
+                    width={420}
+                    height={200}
+                    className="h-full w-full object-cover"
+                     data-ai-hint={item.hint}
+                  />
+                </div>
+              )}
+              {item.type === "photo-quote" && (
+                 <div
+                  className={cn(
+                    "flex h-[200px] w-[640px] items-center gap-6 rounded-2xl p-8",
+                    item.className
+                  )}
+                >
+                  <div className="relative h-[140px] w-[140px] flex-shrink-0 overflow-hidden rounded-full">
+                     <Image
+                      src={item.image}
+                      alt={`Photo of ${item.author}`}
+                      width={140}
+                      height={140}
+                      className="h-full w-full object-cover"
+                       data-ai-hint={item.hint}
+                    />
+                  </div>
+                   <div>
+                    <blockquote className="text-base">
+                      &ldquo;{item.quote}&rdquo;
+                    </blockquote>
+                    <cite className="mt-4 block not-italic font-semibold uppercase tracking-widest">
+                      {item.author}
+                    </cite>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
+        <div
+            className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent"
+            aria-hidden="true"
+          />
       </div>
     </section>
   );

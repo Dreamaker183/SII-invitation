@@ -8,12 +8,12 @@ import Tickets from '@/components/sections/tickets';
 import Sponsors from '@/components/sections/sponsors';
 import Location from '@/components/sections/location';
 import Newsletter from '@/components/sections/newsletter';
-import Footer from '@/components/layout/footer';
 import SocialProof from '@/components/sections/social-proof';
+import Footer from '@/components/layout/footer';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main className="flex-1">
         <Hero />

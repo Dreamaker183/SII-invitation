@@ -82,11 +82,16 @@ const config = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "scroll-left-slow": {
+           "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "scroll-left": "scroll-left 40s linear infinite",
+        "scroll-left-slow": "scroll-left-slow 80s linear infinite",
       },
     },
   },
