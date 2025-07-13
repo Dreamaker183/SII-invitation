@@ -30,6 +30,7 @@ const details = [
 export default function Stats() {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const sectionRef = React.useRef<HTMLDivElement>(null);
+  const [inView, setInView] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -60,11 +61,26 @@ export default function Stats() {
     };
   }, []);
 
+  // Intersection Observer for slide in/out
+  React.useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="stats" className="py-16 sm:py-24">
       <div
         ref={sectionRef}
-        className="relative"
+        className={cn(
+          "relative transition-all duration-700 ease-in-out",
+          inView ? "translate-x-0 opacity-100" : "-translate-x-32 opacity-0"
+        )}
         style={{ height: `${details.length * 100}vh` }}
       >
         <div className="sticky top-0 flex h-screen w-full flex-col items-center justify-center overflow-hidden">

@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden py-24 pt-36 sm:py-32 flex items-center justify-center text-center"
+      className="relative overflow-hidden py-24 pt-36 sm:py-32 flex items-center justify-center text-center h-[100vh]"
     >
       <div className="absolute inset-0 z-0">
         <Image
