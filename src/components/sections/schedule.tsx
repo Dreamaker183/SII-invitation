@@ -53,7 +53,7 @@ export default function Schedule() {
         className="relative" 
         style={{ height: `${scheduleData.length * 50}vh` }}
       >
-        <div className="sticky top-20 flex h-screen w-full flex-col items-center justify-start overflow-hidden">
+        <div className="sticky top-10 flex h-screen w-full flex-col items-center justify-start overflow-hidden">
            <div className="container mx-auto px-4 pt-16 mb-12 text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Conference Timeline

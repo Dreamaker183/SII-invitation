@@ -23,7 +23,7 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 text-center text-white relative z-10">
         <h1 className="font-headline text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-          Startup Grind Conference 2025
+          SII | Startups x Investors x investhk 
         </h1>
         <p className="mt-6 text-lg leading-8 text-white/80 sm:text-xl">
           Join 5,000+ entrepreneurs, investors, and startup enthusiasts.
@@ -34,11 +34,11 @@ export default function Hero() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
           <div className="flex items-center gap-2">
             <Calendar className="size-5 text-accent" />
-            <span className="font-medium">March 15-17, 2025</span>
+            <span className="font-medium">Sep 18/25, 2025</span>
           </div>
           <div className="flex items-center gap-2">
             <MapPin className="size-5 text-accent" />
-            <span className="font-medium">San Francisco, CA</span>
+            <span className="font-medium">Central/M+ venue</span>
           </div>
         </div>
         <div className="mt-10 flex items-center justify-center gap-x-6">
