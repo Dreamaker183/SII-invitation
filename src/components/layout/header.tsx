@@ -17,8 +17,8 @@ const navLinks = [
   { name: "Highlights", href: "#stats" },
   { name: "Schedule", href: "#schedule" },
   { name: "Speakers", href: "#speakers" },
+  { name: "Startups", href: "#startups" },
   { name: "Sponsors", href: "#sponsors" },
-  { name: "Location", href: "#location" },
 ];
 
 export default function Header() {
@@ -53,33 +53,23 @@ export default function Header() {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <a href="#" className="flex items-center space-x-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 256 256"
+          <img
+            src="/image/octagon.png"
+            alt="UDFO Logo"
             className={cn(
-              "size-8 transition-colors duration-300",
-              isScrolled ? "" : "[&>path]:fill-white"
+              "size-8 transition-colors duration-300 object-contain",
+              isScrolled ? "" : ""
             )}
-          >
-            <defs>
-              <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style={{stopColor: 'hsl(var(--primary-blue))'}} />
-                <stop offset="100%" style={{stopColor: 'hsl(var(--primary-purple))'}} />
-              </linearGradient>
-            </defs>
-            <path
-              className={isScrolled ? "fill-[url(#logo-gradient)]" : "fill-white"}
-              d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88Zm-44-36a8 8 0 0 1-8-8V80a8 8 0 0 1 16 0v92a8 8 0 0 1-8 8Zm40-32a8 8 0 0 1-8-8V96a8 8 0 0 1 16 0v60a8 8 0 0 1-8 8Zm40 24a8 8 0 0 1-8-8V88a8 8 0 0 1 16 0v84a8 8 0 0 1-8 8Z"
-            ></path>
-          </svg>
-
+            width={32}
+            height={32}
+          />
           <span
             className={cn(
               "font-headline text-2xl font-bold transition-colors duration-300",
               isScrolled ? "text-foreground" : "text-white"
             )}
           >
-            GrindSite
+            UDFO
           </span>
         </a>
         <nav className="hidden items-center space-x-8 md:flex">

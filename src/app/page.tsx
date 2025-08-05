@@ -6,7 +6,7 @@ import Schedule from '@/components/sections/schedule';
 import Speakers from '@/components/sections/speakers';
 import SponsorsGrid from '@/components/sections/sponsors-grid';
 import Sponsors from '@/components/sections/sponsors';
-import Location from '@/components/sections/location';
+import StartupShowcase from '@/components/sections/location';
 import Newsletter from '@/components/sections/newsletter';
 import SocialProof from '@/components/sections/social-proof';
 import Footer from '@/components/layout/footer';
@@ -38,7 +38,7 @@ export default function Home() {
           <SponsorsGrid />
         </FadeInSection>
         <FadeInSection>
-          <Location />
+          <StartupShowcase />
         </FadeInSection>
         <FadeInSection>
           <Newsletter />

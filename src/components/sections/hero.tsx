@@ -23,7 +23,7 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 text-center text-white relative z-10">
         <h1 className="font-headline text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-          SII | Startups x Investors x investhk 
+          SII | Startups x Investors x InvestHK
         </h1>
         <p className="mt-6 text-lg leading-8 text-white/80 sm:text-xl">
           Join 5,000+ entrepreneurs, investors, and startup enthusiasts.
