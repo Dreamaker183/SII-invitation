@@ -34,7 +34,7 @@ export default function Hero() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
           <div className="flex items-center gap-2">
             <Calendar className="size-5 text-accent" />
-            <span className="font-medium">Sep 18/25, 2025</span>
+            <span className="font-medium">Sep 9, 2025</span>
           </div>
           <div className="flex items-center gap-2">
             <MapPin className="size-5 text-accent" />
